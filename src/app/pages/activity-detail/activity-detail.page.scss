@@ -1,0 +1,21 @@
+ion-content {
+  --padding-start: 1rem;
+  --padding-end: 1rem;
+
+
+  .map {
+    height: 400px;
+    background-color: #dbdbdb;
+  }
+
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: row;
+}
