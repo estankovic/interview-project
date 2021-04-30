@@ -17,7 +17,7 @@ export class ActivityService {
   }
 
   activiti(id: ActivityModel) {
-    return this.http.get<any>('http://localhost:3000/posts/' + id);
+    return this.http.get<any>('http://localhost:3000/activities/' + id);
   }
 
 
