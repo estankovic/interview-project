@@ -30,6 +30,11 @@ ion-card {
 
       padding: .5rem 0;
 
+      &-row {
+        display: flex;
+        justify-content: space-between;
+      }
+
     }
 
   }
