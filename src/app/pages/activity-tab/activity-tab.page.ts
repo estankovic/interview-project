@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivityService} from '../../shared/services/activity.service';
 
 @Component({
   selector: 'app-activity-tab',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivityTabPage implements OnInit {
 
-  constructor() { }
+  activities$ = this.activityService.getList();
+
+  constructor(
+    private readonly activityService: ActivityService
+  ) { }
 
   ngOnInit() {
   }
