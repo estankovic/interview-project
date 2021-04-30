@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivityModel} from "../../shared/models/activity.model";
 import {ActivityService} from "../../shared/services/activity.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-activity-detail',
@@ -13,7 +14,9 @@ export class ActivityDetailPage implements OnInit {
   // eslint-disable-next-line @typescript-eslint/naming-convention
   activity_detail: ActivityModel = {} as any;
 
-  constructor(private service: ActivityService, private url: ActivatedRoute) { }
+  subscription: Subscription;
+
+  constructor(private service: ActivityService, private url: ActivatedRoute, public ruter: Router) { }
 
   ngOnInit() {
     console.log(this.url.snapshot.params);
@@ -28,6 +31,14 @@ export class ActivityDetailPage implements OnInit {
     } else {
       return (value / 1000).toFixed(1) + 'km';
     }
+  }
+
+  onClick() {
+    this.ruter.navigate(['..']);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
