@@ -1,0 +1,13 @@
+ion-content {
+  --horizontal-content-padding: 1.5rem;
+
+  --padding-start: var(--horizontal-content-padding);
+  --padding-end: var(--horizontal-content-padding);
+
+
+  .activity-image {
+    margin-left: calc(var(--horizontal-content-padding) * -1);
+    margin-right: calc(var(--horizontal-content-padding) * -1);
+  }
+
+}

@@ -1,0 +1,36 @@
+ion-card {
+  ion-card-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .icon {
+      background-color: rgba(var(--ion-color-primary-rgb), .2);
+      border-radius: .25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 3rem;
+      width: 3rem;
+
+      margin-right: 1rem;
+
+      ion-icon {
+        font-size: 2.25rem;
+        color: var(--ion-color-primary);
+      }
+    }
+
+    .content {
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      padding: .5rem 0;
+
+    }
+
+  }
+}
