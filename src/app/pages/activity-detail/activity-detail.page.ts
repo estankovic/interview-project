@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivityModel} from "../../shared/models/activity.model";
+import {ActivityService} from "../../shared/services/activity.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-activity-detail',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActivityDetailPage implements OnInit {
 
-  constructor() { }
+  // eslint-disable-next-line @typescript-eslint/naming-convention
+  activity_detail: ActivityModel = {} as any;
+
+  constructor(private service: ActivityService, private url: ActivatedRoute) { }
 
   ngOnInit() {
+    console.log(this.url.snapshot.params);
+    this.service.activiti(this.url.snapshot.params.id).subscribe(res => {
+      this.activity_detail = res;
+    });
+  }
+
+  calculateMeterToKMIfNecessary(value) {
+    if (value < 1000) {
+      return value.toFixed(1) + ' m';
+    } else {
+      return (value / 1000).toFixed(1) + 'km';
+    }
   }
 
 }
