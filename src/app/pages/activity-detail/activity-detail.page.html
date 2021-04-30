@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-button (click)="onClick()">
-        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      <ion-icon slot="icon-only" name="{{platform.is('ios') ? 'chevron-back' : 'arrow-back'}}"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-title>{{activity_detail.name}}</ion-title>

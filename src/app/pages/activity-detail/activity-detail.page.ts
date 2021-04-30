@@ -3,6 +3,7 @@ import {ActivityModel} from "../../shared/models/activity.model";
 import {ActivityService} from "../../shared/services/activity.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subscription} from "rxjs";
+import {Platform} from "@ionic/angular";
 
 @Component({
   selector: 'app-activity-detail',
@@ -16,7 +17,7 @@ export class ActivityDetailPage implements OnInit {
 
   subscription: Subscription;
 
-  constructor(private service: ActivityService, private url: ActivatedRoute, public ruter: Router) { }
+  constructor(private service: ActivityService, private url: ActivatedRoute, public ruter: Router, public platform: Platform) { }
 
   ngOnInit() {
     console.log(this.url.snapshot.params);
