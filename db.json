@@ -1,32 +1,36 @@
 {
-  "posts": [
+  "activities": [
     {
       "id": "abcd",
       "name": "Morning Run",
       "icon": "fitness",
       "target": 8000,
-      "achieved": 7236
+      "achieved": 7236,
+      "maxElevation": 68
     },
     {
       "id": "efgh",
       "name": "Steps",
       "icon": "footsteps",
       "target": 60000,
-      "achieved": 37896
+      "achieved": 37896,
+      "maxElevation": 1668
     },
     {
       "id": "ijkl",
       "name": "Cycling",
       "icon": "bicycle",
       "target": 20000,
-      "achieved": 0
+      "achieved": 0,
+      "maxElevation": 0
     },
     {
       "id": "mnop",
       "name": "Evening Run",
       "icon": "fitness",
       "target": 8000,
-      "achieved": 0
+      "achieved": 0,
+      "maxElevation": 0
     }
   ]
 }
