@@ -13,7 +13,7 @@ export class ActivityService {
   ) { }
 
   getList(): Observable<ActivityModel[]> {
-    return this.http.get<ActivityModel[]>('http://localhost:3000/posts');
+    return this.http.get<ActivityModel[]>('http://localhost:3000/activities');
   }
 
   activiti(id: ActivityModel) {
