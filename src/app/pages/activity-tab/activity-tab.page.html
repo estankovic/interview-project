@@ -9,6 +9,7 @@
       [name]="a.name"
       [icon]="a.icon"
       [progress]="a.achieved / a.target"
+      (click)="onClick(a)"
     ></app-activity-tile>
   </div>
 </ion-content>
