@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/member-ordering,no-underscore-dangle */
+
 import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
@@ -9,13 +11,20 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ActivityTileComponent implements OnInit {
 
+  _target: number;
+
   @Input() icon: string;
 
   @Input() name: string;
 
   @Input() progress: number;
 
-  @Input() target: number;
+  @Input() set target(value: any) {
+    this._target = value;
+  }
+  get target() {
+    return this._target;
+  }
 
   constructor() { }
 
