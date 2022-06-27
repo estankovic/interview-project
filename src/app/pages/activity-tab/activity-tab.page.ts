@@ -17,4 +17,8 @@ export class ActivityTabPage implements OnInit {
   ngOnInit() {
   }
 
+
+  onClick(a: any) {
+    window.open('/activity-detail/' + a.id, '_self');
+  }
 }

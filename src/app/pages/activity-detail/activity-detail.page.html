@@ -1,53 +1,38 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      <ion-button (click)="onClick()">
+      <ion-icon slot="icon-only" name="{{platform.is('ios') ? 'chevron-back' : 'arrow-back'}}"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-title>Running</ion-title>
+    <ion-title>{{activity_detail.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="activity_detail">
+
+  <div class="map">
+<!--    todo implement later -->
+  </div>
+
   <div class="stat-grid">
     <div class="stat-item">
       <div class="stat-icon">
-        <ion-icon name="trending-down"></ion-icon>
+        <ion-icon name="trending-up"></ion-icon>
       </div>
       <div class="stat-content">
-        <div class="stat-content-value">26.66 km</div>
+        <div class="stat-content-value">{{calculateMeterToKMIfNecessary(activity_detail.achieved)}}</div>
         <div class="stat-content-label">Distance</div>
       </div>
     </div>
 
     <div class="stat-item">
       <div class="stat-icon">
-        <ion-icon name="trending-down"></ion-icon>
+        <ion-icon name="trending-up"></ion-icon>
       </div>
       <div class="stat-content">
-        <div class="stat-content-value">26.66 km</div>
-        <div class="stat-content-label">Distance</div>
-      </div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-icon">
-        <ion-icon name="trending-down"></ion-icon>
-      </div>
-      <div class="stat-content">
-        <div class="stat-content-value">26.66 km</div>
-        <div class="stat-content-label">Distance</div>
-      </div>
-    </div>
-
-    <div class="stat-item">
-      <div class="stat-icon">
-        <ion-icon name="trending-down"></ion-icon>
-      </div>
-      <div class="stat-content">
-        <div class="stat-content-value">26.66 km</div>
-        <div class="stat-content-label">Distance</div>
+        <div class="stat-content-value">{{calculateMeterToKMIfNecessary(activity_detail.maxElevation)}}</div>
+        <div class="stat-content-label">Max Elevation</div>
       </div>
     </div>
   </div>

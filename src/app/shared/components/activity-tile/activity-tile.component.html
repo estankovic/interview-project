@@ -4,7 +4,10 @@
       <ion-icon [name]="icon"></ion-icon>
     </div>
     <div class="content">
-      <div class="content-title">{{name}}</div>
+      <div class="content-row">
+        <strong>{{name}}</strong>
+        <span>{{calculateMeterToKMIfNecessary(_target)}}</span>
+      </div>
       <ion-progress-bar [value]="progress"></ion-progress-bar>
     </div>
   </ion-card-content>

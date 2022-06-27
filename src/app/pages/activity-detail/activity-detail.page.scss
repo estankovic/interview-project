@@ -1,13 +1,17 @@
+ion-header {
+  ion-title {
+    color: var(--ion-color-primary);
+  }
+}
+
 ion-content {
   --padding-start: 1rem;
   --padding-end: 1rem;
-
 
   .map {
     height: 400px;
     background-color: #dbdbdb;
   }
-
 }
 
 .stat-grid {
@@ -18,4 +22,32 @@ ion-content {
 .stat-item {
   display: flex;
   flex-direction: row;
+}
+
+.stat-icon {
+  color: #3880FF; // primary color
+  font-size: 2rem;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+
+  &-value {
+    font-weight: bold;
+    font-size: 1.333rem;
+  }
+
+  &-label {
+    font-weight: lighter;
+    margin-top: .5rem;
+  }
+}
+
+.stat-grid {
+  margin-top: 1rem;
 }

@@ -4,4 +4,5 @@ export interface ActivityModel {
   icon: string;
   target: number;
   achieved: number;
+  maxElevation: number;
 }
